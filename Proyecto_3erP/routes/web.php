@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/Cliente', function () {
+    return view('Cliente.index');
+});
+
+Route::get('Cliente/Producto', 'App\Http\Controllers\ProductoController@index')->name('cliente.producto');
+Route::get('Cliente/Producto/{id}/edit', 'App\Http\Controllers\ProductoController@edit')->name('cliente.compra');
+
+//Route::resource('/Cliente/Producto','App\Http\Controllers\ProductoController');
+
 
 Route::middleware([
     'auth:sanctum',
