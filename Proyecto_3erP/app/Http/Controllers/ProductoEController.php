@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use Illuminate\Support\Facades\File;
 
 class ProductoEController extends Controller
 {
@@ -58,6 +59,7 @@ class ProductoEController extends Controller
     public function show(string $id)
     {
         //
+
     }
 
     /**
@@ -66,6 +68,8 @@ class ProductoEController extends Controller
     public function edit(string $id)
     {
         //
+        $registro = Producto::find($id);
+        return view("Empleado.inst_productos.edit")->with('registro',$registro);
     }
 
     /**
@@ -74,6 +78,17 @@ class ProductoEController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $registro = Producto::find($id);
+
+        $registro->nombre=$request->get('nombre');
+        $registro->categoria=$request->get('categoria');
+        $registro->usuario=$request->get('usuario');
+        $registro->marca=$request->get('marca');
+        $registro->descripcion=$request->get('descripcion');
+        $registro->precio=$request->get('precio');
+        $registro->unidades=$request->get('unidades');
+        $registro->save();
+        return( redirect('/Empleado/Producto'));
     }
 
     /**
@@ -82,5 +97,12 @@ class ProductoEController extends Controller
     public function destroy(string $id)
     {
         //
+        $registro=Producto::find($id);
+        $dir = 'img/'.$registro->imagen;
+        if(File::exists($dir)){
+            File::delete($dir);
+        }
+        $registro->delete();
+        return redirect('/Empleado/Producto');
     }
 }
