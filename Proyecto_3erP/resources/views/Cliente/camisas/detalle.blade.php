@@ -45,7 +45,7 @@
         <h1>Detalle de compra</h1>
         <div class="container-flex">
             <div class="img">
-                <img src="{{$productos->imagen}}" alt="">
+                <img src="{{asset('img/'.$productos->imagen)}}" alt="">
             </div>
             <div class="info">
                 <h2 class='item'>{{$productos->nombre}}</h2>

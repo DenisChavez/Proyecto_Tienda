@@ -20,6 +20,12 @@ Route::get('/Cliente', function () {
     return view('Cliente.index');
 });
 
+Route::get('/Empleado', function () {
+    return view('Empleado.index');
+});
+
+Route::resource('/Empleado/Producto','App\Http\Controllers\ProductoEController');
+
 Route::get('Cliente/Producto', 'App\Http\Controllers\ProductoController@index')->name('cliente.producto');
 Route::get('Cliente/Producto/{id}/edit', 'App\Http\Controllers\ProductoController@edit')->name('cliente.compra');
 
