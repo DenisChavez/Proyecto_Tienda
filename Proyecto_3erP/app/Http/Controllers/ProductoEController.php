@@ -13,6 +13,8 @@ class ProductoEController extends Controller
     public function index()
     {
         //
+        $datos = Producto::all();
+        return view("Empleado.inst_productos.index")->with('datos',$datos);
     }
 
     /**
@@ -21,6 +23,7 @@ class ProductoEController extends Controller
     public function create()
     {
         //
+        return view("Empleado.inst_productos.create");
     }
 
     /**
@@ -29,6 +32,24 @@ class ProductoEController extends Controller
     public function store(Request $request)
     {
         //
+        $registro = new Producto();
+        $registro->nombre=$request->get('nombre');
+        $registro->categoria=$request->get('categoria');
+        $registro->usuario=$request->get('usuario');
+        $registro->marca=$request->get('marca');
+        $registro->descripcion=$request->get('descripcion');
+        $registro->precio=$request->get('precio');
+        $registro->unidades=$request->get('unidades');
+        if($request->hasfile('imagen'))
+        {
+            $file = $request->file('imagen');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move('img/',$filename);
+            $registro->imagen = $filename;
+        }
+        $registro->save();
+        return( redirect('/Empleado/Producto'));
     }
 
     /**
