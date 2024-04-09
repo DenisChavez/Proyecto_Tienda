@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use Illuminate\Support\Facades\Session;
 
 class ProductoController extends Controller
 {
@@ -21,9 +22,18 @@ class ProductoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function mostrar_carrito()
     {
         //
+        if (empty(config('app.carrito'))) 
+        {
+            return view('Cliente.carrito')->with('productos','puta');
+        }
+        else
+        {
+            return view('Cliente.carrito')->with('productos',config('app.carrito'));
+        }
+        
     }
 
     /**
@@ -32,6 +42,19 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
+        $id = $request->input('productos');
+        $productos = Producto::find($id);
+        if (sizeof(config('app.carrito')) != 0) 
+        {
+            $tmp_carrito = config('app.carrito');
+            array_merge($tmp_carrito,$productos);
+            config(['app.carrito' => $tmp_carrito]);
+        }
+        else
+        {
+            config(['app.carrito' => $productos]);
+        }
+        return view('Cliente.carrito')->with('productos',config('app.carrito'));
     }
 
     /**

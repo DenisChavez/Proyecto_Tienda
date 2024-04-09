@@ -9,7 +9,7 @@
     <div class='espacio'></div>
     <img src="img/menu.png" alt="Menu" class='menu'>
     <img src="img/usuario.png" alt="Usuario" class='user'>
-    <img src="img/carrito-de-compras.png" alt="Carrito" class='carrito'>
+    <a href="Cliente/Producto/mostrar"><img src="img/carrito-de-compras.png" alt="Carrito" class='carrito'></a>
     <h1>Tienda de Ropa</h1>
  </header>
 <body>
