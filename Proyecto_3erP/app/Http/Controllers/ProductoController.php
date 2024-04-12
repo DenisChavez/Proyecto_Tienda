@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Carro;
+use Session;
 
 class ProductoController extends Controller
 {
@@ -37,9 +39,27 @@ class ProductoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function agregar_carro(Request $request,string $id)
     {
         //
+        $producto = Producto::find($id);
+        $anterior = Session::has('carro') ? Session::get('carro') : null;
+        $carro = new Carro($anterior);
+        $carro->add($producto, $producto->id);
+
+        $request->session()->put('carro',$carro);
+        return(redirect('/Cliente'));
+    }
+
+    public function mostrar_carro()
+    {
+        //
+        if(!Session::has('carro')){
+            return view('carro.index');
+        }
+        $anterior = Session::get('carro');
+        $carro = new Carro($anterior);
+        return view('carro.index')->with('productos',$carro->elementos)->with('total_precio',$carro->total_precio);
     }
 
     /**

@@ -38,7 +38,23 @@
                 font-weight: 700;
                 font-size: 14px;
             }
-            
+            a:link { 
+                text-decoration: none;
+                color: black; 
+            } 
+            a:visited { 
+                text-decoration: none; 
+                color: black; 
+            } 
+            a:hover { 
+                text-decoration: none; 
+                color: black; 
+            } 
+            a:active { 
+                text-decoration: none; 
+                color: black; 
+            }
+                        
         </style>
     </head>
     <div class="container">
@@ -54,7 +70,7 @@
                 <p><span>Unidades: </span>{{$productos->unidades}}</p>
                 <p><span>Precio: </span>{{$productos->precio}}</p>
                 <p><span>Categoría: </span>{{$productos->categoria}}</p>
-                <input type="submit" value="Comprar producto" class="btn btn-primary">
+                <a href="{{route('cliente.add', $id = $productos->id)}}"><input type="submit" value="Comprar producto" class="btn btn-primary"></a>
             </div>
         </div>
     </div>

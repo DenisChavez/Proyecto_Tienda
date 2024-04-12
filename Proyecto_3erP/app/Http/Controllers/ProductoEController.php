@@ -50,7 +50,7 @@ class ProductoEController extends Controller
             $registro->imagen = $filename;
         }
         $registro->save();
-        return( redirect('/Empleado/Producto'));
+        return(redirect('/Empleado/Producto'));
     }
 
     /**

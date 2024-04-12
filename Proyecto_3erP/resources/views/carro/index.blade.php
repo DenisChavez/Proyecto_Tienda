@@ -16,7 +16,7 @@
         <div class='col-md-12'>
             <div class='card'>
                 <div class='card-header'>
-                    <h4>Tabla de Productos
+                    <h4>Productos Agregados al Carrito de Compras
                         <a href="/Empleado" class='btn btn-danger float-end'>ATRAS</a>
                     </h4>
                 </div>
@@ -28,37 +28,22 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Marca</th>
                             <th>Descripcion</th>
-                            <th>Unidades</th>
                             <th>Precio</th>
-                            <th>Categoria</th>
-                            <th>Usuario</th>
                             <th>Imagen</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
+                            <th>Unidades</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($datos as $dato)
+                        @foreach($productos as $producto)
                         <tr>
-                            <th>{{$dato->id}}</th>
-                            <th>{{$dato->nombre}}</th>
-                            <th>{{$dato->marca}}</th>
-                            <th>{{$dato->descripcion}}</th>
-                            <th>{{$dato->unidades}}</th>
-                            <th>{{$dato->precio}}</th>
-                            <th>{{$dato->categoria}}</th>
-                            <th>{{$dato->usuario}}</th>
+                            <th>{{$producto['elemento']['id']}}</th>
+                            <th>{{$producto['elemento']['nombre']}}</th>
+                            <th>{{$producto['elemento']['descripcion']}}</th>
+                            <th>{{$producto['elemento']['precio']}}</th>
+                            <th> {{$producto['elemento']['imagen']}}</th>
                             <th><img src="{{asset('img/'.$dato->imagen)}}" alt=""></th>
-                            <td><a href="/Empleado/Producto/{{$dato->id}}/edit" class='btn btn-info'>Editar</a></td>
-                            <td>
-                                <form action="/Empleado/Producto/{{$dato->id}}" method='POST'>
-                                    @csrf
-                                    @method('Delete')
-                                    <button onclick='return seguro();' type='submit' class='btn btn-warning'>Eliminar</button>
-                                </form>
-                            </td>
+                            <th>{{$producto['cant']}}</th>
                         </tr>
                         @endforeach
                     </tbody>

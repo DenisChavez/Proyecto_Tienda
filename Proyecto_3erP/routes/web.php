@@ -29,6 +29,9 @@ Route::resource('/Empleado/Producto','App\Http\Controllers\ProductoEController')
 Route::get('Cliente/Producto', 'App\Http\Controllers\ProductoController@index')->name('cliente.producto');
 Route::get('Cliente/Producto/{id}/edit', 'App\Http\Controllers\ProductoController@edit')->name('cliente.compra');
 
+Route::get('Cliente/add-cart/{id}', 'App\Http\Controllers\ProductoController@agregar_carro')->name('cliente.add');
+Route::get('Cliente/carro', 'App\Http\Controllers\ProductoController@mostrar_carro')->name('cliente.carro');
+
 //Route::resource('/Cliente/Producto','App\Http\Controllers\ProductoController');
 
 
