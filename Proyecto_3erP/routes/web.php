@@ -31,6 +31,7 @@ Route::get('Cliente/Producto/{id}/edit', 'App\Http\Controllers\ProductoControlle
 
 Route::get('Cliente/add-cart/{id}', 'App\Http\Controllers\ProductoController@agregar_carro')->name('cliente.add');
 Route::get('Cliente/carro', 'App\Http\Controllers\ProductoController@mostrar_carro')->name('cliente.carro');
+Route::get('Cliente/del-cart/{id}', 'App\Http\Controllers\ProductoController@eliminar')->name('cliente.del');
 
 //Route::resource('/Cliente/Producto','App\Http\Controllers\ProductoController');
 

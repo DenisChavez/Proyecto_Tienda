@@ -51,6 +51,23 @@ class ProductoController extends Controller
         return(redirect('/Cliente'));
     }
 
+    public function eliminar(string $id)
+    {
+        //
+        $anterior = Session::has('carro') ? Session::get('carro') : null;
+        $carro = new Carro($anterior);
+        $carro->eliminar($id);
+
+        if(count($carro->elementos) > 0){
+            Session::put('carro',$carro);
+        }
+        else{
+            Session::forget('carro');
+        }
+        
+        return(redirect('/Cliente/carro'));
+    }        
+
     public function mostrar_carro()
     {
         //

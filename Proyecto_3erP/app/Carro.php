@@ -16,17 +16,28 @@ class Carro
         }
     }
 
-    public function add($elementos, $id){
-        $almacen = ['cant' => 0, 'precio' => $elementos->precio, 'elemento' => $elementos];
+    public function add($elemento, $id){
+        $almacen = ['cant' => 0, 'precio' => $elemento->precio, 'elemento' => $elemento];
         if($this->elementos){
             if(array_key_exists($id, $this->elementos)){
                 $almacen = $this->elementos[$id];
             }
         }
         $almacen['cant']++;
-        $almacen['precio'] = $elementos->precio * $almacen['cant'];
+        $almacen['precio'] = $elemento->precio * $almacen['cant'];
         $this->elementos[$id] = $almacen;
         $this->total_cant++;
-        $this->total_precio += $elementos->precio;
+        $this->total_precio += $elemento->precio;
+    }
+
+    public function eliminar($id){
+        $this->elementos[$id]['cant']--;
+        $this->elementos[$id]['precio'] -= $this->elementos[$id]['elemento']['precio'];
+        $this->total_cant--;
+        $this->total_precio -= $this->elementos[$id]['elemento']['precio'];
+
+        if($this->elementos[$id]['cant'] <= 0){
+            unset($this->elementos[$id]);
+        }
     }
 }
