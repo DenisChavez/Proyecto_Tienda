@@ -70,7 +70,12 @@
                 <p><span>Unidades: </span>{{$productos->unidades}}</p>
                 <p><span>Precio: </span>{{$productos->precio}}</p>
                 <p><span>Categoría: </span>{{$productos->categoria}}</p>
-                <a href="{{route('cliente.add', $id = $productos->id)}}"><input type="submit" value="Comprar producto" class="btn btn-primary"></a>
+                @if($productos->unidades == 0)
+                    <a href="{{route('cliente.add', $id = $productos->id)}}" style = 'display: none;'><input type="submit" value="Comprar producto" class="btn btn-primary"></a>
+                @else
+                    <a href="{{route('cliente.add', $id = $productos->id)}}"><input type="submit" value="Comprar producto" class="btn btn-primary"></a>
+                @endif
+                <a href="/Cliente"><input type="submit" value="Atras" class="btn btn-danger"></a>
             </div>
         </div>
     </div>

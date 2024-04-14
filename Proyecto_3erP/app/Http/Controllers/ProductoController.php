@@ -46,8 +46,10 @@ class ProductoController extends Controller
         $anterior = Session::has('carro') ? Session::get('carro') : null;
         $carro = new Carro($anterior);
         $carro->add($producto, $producto->id);
-
         $request->session()->put('carro',$carro);
+        if($carro->elementos[$id]['cant'] > $producto->unidades){
+            return redirect()->route('cliente.del',['id' => $id]);
+        }
         return(redirect('/Cliente'));
     }
 
@@ -79,6 +81,21 @@ class ProductoController extends Controller
         return view('carro.index')->with('productos',$carro->elementos)->with('total_precio',$carro->total_precio);
     }
 
+    public function comprar()
+    {
+        //
+        $anterior = Session::get('carro');
+        $carro = new Carro($anterior);
+        $productos = $carro->elementos;
+        foreach($productos as $producto){
+            $registro = Producto::find($producto['elemento']['id']);
+            $registro->unidades= $producto['elemento']['unidades'] - $producto['cant'] ;
+            $registro->save();
+        }
+        Session::forget('carro');
+        return( redirect('/Cliente'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -100,8 +117,16 @@ class ProductoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function end()
     {
         //
+        if(Session::has('carro'))
+        {
+            Session::forget('carro');
+            return view('welcome');
+        }
+        return view('welcome');
     }
+
+
 }

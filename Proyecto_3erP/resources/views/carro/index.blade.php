@@ -52,7 +52,7 @@
                     <h5>Preicio Total: {{$total_precio}}</h5>
                     <div class='espacio'></div>
                     <div class='text-center'>
-                        <a href="/Cliente" class='btn btn-primary'>Comprar</a>
+                        <a href="{{route('cliente.comprar')}}" class='btn btn-primary'>Comprar</a>
                     </div>
                     @else
                     <div class='text-center'>

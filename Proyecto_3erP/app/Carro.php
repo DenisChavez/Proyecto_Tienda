@@ -27,7 +27,7 @@ class Carro
         $almacen['precio'] = $elemento->precio * $almacen['cant'];
         $this->elementos[$id] = $almacen;
         $this->total_cant++;
-        $this->total_precio += $elemento->precio;
+        $this->total_precio += $elemento->precio;                 
     }
 
     public function eliminar($id){
