@@ -38,7 +38,6 @@
                 font-weight: 700;
                 font-size: 14px;
             }
-            
         </style>
     </head>
     <div class="container">
