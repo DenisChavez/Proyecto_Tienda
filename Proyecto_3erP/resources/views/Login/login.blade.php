@@ -99,10 +99,13 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-input" id="password" name="password" required>
                     </div>
+                    
                     <button type="submit" class="btn">Ingresar</button>
+                    
                     <div>
                         <p>¿No tienes una cuenta? <a href="{{route('registro')}}">Regístrate</a></p>
                     </div>
+                                
                 </div>
         </form>
     </div>

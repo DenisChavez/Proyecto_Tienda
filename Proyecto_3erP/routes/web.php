@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/Cliente', function () {
     return view('Cliente.index');
-});//->middleware('auth');
+})->middleware('auth');
 
 
 Route::get('/Empleado', function () {

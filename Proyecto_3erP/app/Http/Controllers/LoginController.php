@@ -13,6 +13,7 @@ class LoginController extends Controller
         $user = new User();
         $user->name=$request->name;
         $user->email=$request->email;
+        $user->rol=$request->get('contacto');
         $user->password=Hash::make($request->password); //Cifrar la contraseña con la clase Hash
         $user->save();
         // Auth::login($user); Inicia sesion automaticamente
@@ -20,17 +21,27 @@ class LoginController extends Controller
     }
     
     public function login(Request $request){
-        $credenciales = ["email" => $request->email,
-                        "password" => $request->password];
-
+        $credenciales = [
+            "email" => $request->email,
+            "password" => $request->password
+        ];
+    
         if(Auth::attempt($credenciales)){
-            $request->session()->regenerate();
-            return view('Cliente.index');
-        }else{
-            return view('Login.login');
+            $usuario = Auth::user();
+    
+            if ($usuario->rol == 'Cliente') {
+                return view('Cliente.index');
+            } elseif ($usuario->rol == 'Empleado') {
+                return view('Empleado.index');
+            } else {
+                return view('Login.login')->with('error', 'Rol de usuario no válido.');
+            }
+        } else {
+            return view('Login.login')->with('error', 'Credenciales inválidas');
         }               
-
     }
+    
+    
 
     public function logout(Request $request){
         Auth::logout();

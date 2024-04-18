@@ -83,6 +83,11 @@
         a:hover{
             color: #01ABF9;
         }
+        fieldset{
+            border: none;
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body>
@@ -102,6 +107,12 @@
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-input" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <fieldset>
+                            <label><input type="radio" name="contacto" value="Cliente" class="contact">Cliente</label>
+                            <label><input type="radio" name="contacto" value="Empleado" class="contact">Empleado</label> 
+                        </fieldset>
                     </div>
                     <button type="submit" class="btn">Registrarse</button>
                 </div>
