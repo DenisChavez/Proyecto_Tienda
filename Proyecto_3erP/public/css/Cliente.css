@@ -65,6 +65,8 @@ ul {
   max-width: 300px;
   width: 100%;
   text-align: center;
+  max-height: 450px;
+  height: 450px;
 }
 
 .category:hover {

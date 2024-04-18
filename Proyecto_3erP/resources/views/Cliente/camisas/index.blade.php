@@ -2,6 +2,9 @@
 
 @section('menu')
 <style>
+    .espacio{
+        height: 50px;
+    }
     .container {
         margin-top: 20px;
     }
@@ -36,7 +39,10 @@
         color: #007bff;
     }
 </style>
-
+<div class='espacio'></div>
+<div class='text-center'>
+    <a href="/Cliente" class='btn btn-danger'>ATRAS</a>
+</div>
 <div class="container">
     <div class="container-tabla">
         <table class="tabla">

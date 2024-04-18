@@ -7,7 +7,6 @@
 </head>
 <header>
     <div class='espacio'></div>
-    <img src="img/menu.png" alt="Menu" class='menu'>
     <a href="{{route('logout')}}"><img src="img/logout.png" alt="Logout" class='user'></a>
     <a href="{{route('cliente.carro')}}"><img src="img/carrito-de-compras.png" alt="Carrito" class='carrito'></a>
     <h1>Tienda de Ropa</h1>
@@ -25,7 +24,7 @@
         </a>
 
         <a href="{{ route('cliente.producto', ['nombre' => 'pantalon']) }}"> 
-            <li class="category" style="margin-left: -20%;">
+            <li class="category">
                 <img src="img/pantalones.PNG" alt="pantalones" class="img-cat">
                 <p class="title-cat">Pantalones</p>
                 <p class="p-cat">Prendas inferiores que cubren las piernas, incluimos faldas y shorts</p>    
@@ -45,7 +44,7 @@
             </li>
         </a>
         <a href="{{ route('cliente.producto', ['nombre' => 'sueteres']) }}"> 
-            <li class="category" style="margin-left: -20%;">
+            <li class="category">
                 <img src="img/sueter.jpg" alt="sueteres" class="img-cat">
                 <p class="title-cat">Sueteres</p>
                 <p class="p-cat">Todo tipo de sueteres y chumpas de diferentes estilos</p>    
@@ -64,7 +63,7 @@
             </li>
         </a>
         <a href="{{ route('cliente.producto', ['nombre' => 'otros']) }}"> 
-            <li class="category" style="margin-left: -20%;">
+            <li class="category">
                 <img src="img/otro.jpg" alt="Otros tipos de ropa" class="img-cat">
                 <p class="title-cat">Otros</p>
                 <p class="p-cat">Otros tipos de ropa</p>    
