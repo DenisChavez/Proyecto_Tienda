@@ -1,9 +1,9 @@
-.espacio{
+.espacio {
   display: block;
   height: 30px;
 }
 
-.menu{
+.menu {
   display: inline-block;
   position: absolute;
   left: 0;
@@ -11,20 +11,22 @@
   height: 50px;
 }
 
-h1{
-    font-size:40px;
-    font-weight: bolder;
-    text-align: center; 
+h1 {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  text-align: center; 
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-h2{
-    font-size:30px;
-    font-weight: bolder;
-    text-align: center; 
-    margin: 40px 0;
+h2 {
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center; 
+  margin: 40px 0;
 }
 
-.user{
+.user {
   display: inline-block;
   position: absolute;
   right: 0;
@@ -32,7 +34,7 @@ h2{
   height: 50px;
 }
 
-.carrito{
+.carrito {
   display: inline-block;
   position: absolute;
   right: 0;
@@ -40,73 +42,63 @@ h2{
   height: 50px;
 }
 
-
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: grid;
-    place-items: center;
-    grid-auto-flow: column; /* Place items horizontally */
-    margin-top: 60px;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 60px;
 }
 
-.category{
-    display: inline-block;
-    position: relative;
-    height: auto;
-    padding: 0;
-    box-sizing: border-box;
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 3px;
-    max-width: 400px;
-    width: 400px;
-    max-height: 170px;
-    height: 200px;
-    vertical-align: top;
+.category {
+  display: inline-block;
+  position: relative;
+  height: auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin: 20px;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
 }
 
-.img-cat{
-    width: 30%;
+.category:hover {
+  background-color: #f9f9f9;
 }
 
-.title-cat{
-    display: inline-block;
-    font-size:20px;
-    font-weight: bold;
-    position: absolute;
-    top: 0;
-    margin-left: 10px;
+.img-cat {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
 }
 
-.p-cat{
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    margin-top: 1.5em;
-    margin-left: 10px;
+.title-cat {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-a:link { 
-    text-decoration: none;
-    color: black; 
-  } 
-  a:visited { 
-    text-decoration: none; 
-    color: black; 
-  } 
-  a:hover { 
-    text-decoration: none; 
-    color: black; 
-  } 
-  a:active { 
-    text-decoration: none; 
-    color: black; 
-  }
+.p-cat {
+  font-size: 16px;
+  line-height: 1.5;
+}
 
-  footer{
-    height: 200px;
-  }
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #333;
+}
+
+footer {
+  height: 200px;
+}

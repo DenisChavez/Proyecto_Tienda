@@ -44,7 +44,7 @@
         <h1>Detalle de compra</h1>
         <div class="container-flex">
             <div class="img">
-                <img src="{{$productos->imagen}}" alt="">
+                <img src="{{asset('img/'.$productos->imagen)}}" alt="">
             </div>
             <div class="info">
                 <h2 class='item'>{{$productos->nombre}}</h2>
@@ -53,7 +53,12 @@
                 <p><span>Unidades: </span>{{$productos->unidades}}</p>
                 <p><span>Precio: </span>{{$productos->precio}}</p>
                 <p><span>Categoría: </span>{{$productos->categoria}}</p>
-                <input type="submit" value="Comprar producto" class="btn btn-primary">
+                @if($productos->unidades == 0)
+                    <a href="{{route('cliente.add', $id = $productos->id)}}" style = 'display: none;'><input type="submit" value="Comprar producto" class="btn btn-primary"></a>
+                @else
+                    <a href="{{route('cliente.add', $id = $productos->id)}}"><input type="submit" value="Agregar al carrito" class="btn btn-primary"></a>
+                @endif
+                <a href="/Cliente"><input type="submit" value="Atras" class="btn btn-danger"></a>
             </div>
         </div>
     </div>
