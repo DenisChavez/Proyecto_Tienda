@@ -27,22 +27,36 @@
     }
 
     .btn-primary {
-        background-color: #007bff;
+        background-color: #2CA7E8;
+        border: 2px solid #2CA7E8;
         color: #ffff;
         font-weight: 600;
-        border: 2px solid #007bff;
         padding: 8px 16px;
         border-radius: 10px;
     }
-    .btn-primary:hover {
-        background-color: #ffff;
-        color: #007bff;
+    .btn-primary:hover{
+        background-color: #6FCDFE;
+        border: 2px solid #2CA7E8;
+        box-shadow: 0 0 20px rgba(44, 167, 232, 0.8);
     }
+    .btn-danger{
+        position: relative;
+        right: 39.5%;
+        background-color: #F14646;
+        border: 2px solid #F14646;
+    }
+              
+    .btn-danger:hover{
+        background-color: #F36A6A;
+        border: 2px solid #F14646;
+        box-shadow: 0 0 20px rgba(243, 106, 106, 0.8);
+    }
+
 </style>
 <div class='espacio'></div>
-<div class='text-center'>
-    <a href="/Cliente" class='btn btn-danger'>ATRAS</a>
-</div>
+    <div class='text-center'>
+        <a href="/Cliente" class='btn btn-danger'>Atrás</a>
+    </div>
 <div class="container">
     <div class="container-tabla">
         <table class="tabla">
@@ -56,7 +70,7 @@
                     <th>Precio</th>
                     <th>Categoría</th>
                     <th>Usuario</th>
-                    <th>Acción</th> 
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -77,6 +91,7 @@
                 @endforeach
             </tbody>
         </table>
+        
     </div>
 </div>
 @endsection

@@ -17,7 +17,7 @@
             <div class='card'>
                 <div class='card-header'>
                     <h4>Tabla de Productos
-                        <a href="/Empleado" class='btn btn-danger float-end'>ATRAS</a>
+                        <a href="/Empleado" class='btn btn-danger float-end'>Atrás</a>
                     </h4>
                 </div>
    
@@ -65,7 +65,7 @@
                     </table>
                     <div class='espacio'></div>
                     <div class='text-center'>
-                        <a href="/Empleado/Producto/create" class='btn btn-primary'>Crear Nuevo Producto</a>
+                        <a href="/Empleado/Producto/create" class='btn btn-primary'>Crear nuevo producto</a>
                     </div>
                 </div>
             </div>

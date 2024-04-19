@@ -12,10 +12,9 @@
     <h1>Tienda de Ropa</h1>
  </header>
 <body>
-    <h2>Productos</h2>
 <div class="list">
     <ul>
-        <a href="{{ route('cliente.producto', ['nombre' => 'camisa']) }}">
+        <a href="{{ route('cliente.producto', ['nombre' => 'Camisas']) }}">
             <li class="category">
                 <img src="img/camisas.jpg" alt="camisas" class="img-cat">
                 <p class="title-cat">Camisas</p>
@@ -23,7 +22,7 @@
             </li>
         </a>
 
-        <a href="{{ route('cliente.producto', ['nombre' => 'pantalon']) }}"> 
+        <a href="{{ route('cliente.producto', ['nombre' => 'Pantalones']) }}"> 
             <li class="category">
                 <img src="img/pantalones.PNG" alt="pantalones" class="img-cat">
                 <p class="title-cat">Pantalones</p>
@@ -35,7 +34,7 @@
 
 <div class="list">
     <ul>
-        <a href="{{ route('cliente.producto', ['nombre' => 'ropa interior']) }}">
+        <a href="{{ route('cliente.producto', ['nombre' => 'Ropa interior']) }}">
             <li class="category">
                 <img src="img/ropa_interior.jpg" alt="ropa interior" class="img-cat">
                 <p class="title-cat">Ropa Interior</p>
@@ -43,7 +42,7 @@
                
             </li>
         </a>
-        <a href="{{ route('cliente.producto', ['nombre' => 'sueteres']) }}"> 
+        <a href="{{ route('cliente.producto', ['nombre' => 'Sueteres']) }}"> 
             <li class="category">
                 <img src="img/sueter.jpg" alt="sueteres" class="img-cat">
                 <p class="title-cat">Sueteres</p>
@@ -54,15 +53,14 @@
 </div>
 <div class="list">
     <ul>
-        <a href="{{ route('cliente.producto', ['nombre' => 'formal']) }}">
+        <a href="{{ route('cliente.producto', ['nombre' => 'Formal']) }}">
             <li class="category">
                 <img src="img/vestido.jpg" alt="Ropa formal" class="img-cat">
                 <p class="title-cat">Formal</p>
                 <p class="p-cat">Prendas formales incluidos los sacos y los vestidos</p>
-               
             </li>
         </a>
-        <a href="{{ route('cliente.producto', ['nombre' => 'otros']) }}"> 
+        <a href="{{ route('cliente.producto', ['nombre' => 'Otros']) }}"> 
             <li class="category">
                 <img src="img/otro.jpg" alt="Otros tipos de ropa" class="img-cat">
                 <p class="title-cat">Otros</p>
@@ -71,6 +69,7 @@
         </a>
     </ul>  
 </div>
+
 </body>
 <footer></footer>
 @endsection

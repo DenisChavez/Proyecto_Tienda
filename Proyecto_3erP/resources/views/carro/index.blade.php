@@ -7,6 +7,14 @@
     img{
         max-height: 50px;
     }
+              
+    .btn-primary:hover{
+        box-shadow: 0 0 20px rgba(34, 105, 247, 0.8);
+    }   
+    .btn-danger:hover{
+        background-color: #F36A6A;
+        box-shadow: 0 0 20px rgba(243, 106, 106, 0.8);
+    }
   </style>
 </head>
 @section('menu')
@@ -16,7 +24,7 @@
             <div class='card'>
                 <div class='card-header'>
                     <h4>Productos agregados al carrito de compras
-                        <a href="/Cliente" class='btn btn-danger float-end'>ATRAS</a>
+                        <a href="/Cliente" class='btn btn-danger float-end'>Atrás</a>
                     </h4>
                 </div>
    
@@ -32,7 +40,7 @@
                             <th>Precio</th>
                             <th>Imagen</th>
                             <th>Unidades</th>
-                            <th>Eliminar</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
