@@ -47,11 +47,5 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        if(Session::has('carro'))
-        {
-            Session::forget('carro');
-        }
-        return view('Login.login');
-
     }
 }

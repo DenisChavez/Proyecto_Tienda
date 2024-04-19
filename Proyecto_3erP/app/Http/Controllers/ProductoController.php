@@ -117,16 +117,6 @@ class ProductoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function end()
-    {
-        //
-        if(Session::has('carro'))
-        {
-            Session::forget('carro');
-            return view('welcome');
-        }
-        return view('welcome');
-    }
 
 
 }
